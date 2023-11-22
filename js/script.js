@@ -5,7 +5,7 @@ function displayFibonacci(numbers) {
         const listItem = document.createElement("li");
         listItem.textContent = number;
 
-        if (number % 2 === 0) {
+        if (index % 2 === 0) {
             listItem.classList.add("blue");
         } else {
             listItem.classList.add("red");
