@@ -19,8 +19,8 @@ function calculateFibonacci($length)
     return $fibonacci;
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "GET") {
-    $length = isset($_GET["length"]) ? $_GET["length"] : 10; // Default length is 10
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $length = isset($_POST["length"]) ? $_POST["length"] : 10; // Default length is 10
     $result = calculateFibonacci($length);
     echo json_encode($result);
 }

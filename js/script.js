@@ -20,7 +20,13 @@ function displayFibonacci(numbers) {
 }
 
 function loadFibonacci(length) {
-    fetch(`fibonacci.php?length=${length}`)
+    fetch('fibonacci.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `length=${length}`
+    })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Ответ сети был не в порядке.');
@@ -34,6 +40,8 @@ function loadFibonacci(length) {
             console.error('Возникла проблема с операцией выборки:', error);
         });
 }
+
+
 
 const fibForm = document.getElementById("fibForm");
 fibForm.addEventListener("submit", function (event) {
